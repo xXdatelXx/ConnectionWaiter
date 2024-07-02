@@ -14,6 +14,7 @@ class Connection(
 ) {
     private val executeService = Executors.newSingleThreadExecutor()
 
+    // (Connection download speed + upload speed) / 2
     private val speed: Int
         get() {
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
