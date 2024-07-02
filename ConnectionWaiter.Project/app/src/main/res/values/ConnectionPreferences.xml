@@ -1,0 +1,3 @@
+<resources>
+    <integer name="minimal_speed">256</integer>
+</resources>
