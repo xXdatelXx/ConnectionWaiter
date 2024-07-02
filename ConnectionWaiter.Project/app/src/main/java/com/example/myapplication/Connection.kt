@@ -34,8 +34,8 @@ class Connection(
         executeService.execute {
             while (speed < minimalSpeed)
                 Thread.sleep(connectionRetryInterval.inWholeMilliseconds)
+            
+            view.connect(speed)
         }
-
-        view.connect(speed)
     }
 }
