@@ -26,6 +26,7 @@ class Connection(
             return (downSpeed + upSpeed) / 2
         }
 
+    // Wait until a connection speed < minimalSpeed
     fun connect() {
         if (minimalSpeed <= 0) throw Exception("$minimalSpeed must be greater than 0")
         if (connectionRetryInterval.inWholeMilliseconds <= 0) throw Exception("$connectionRetryInterval must be greater than 0")
