@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.app.Service
 import android.content.Intent
 
+// For foreground app work
 class ConnectionService : Service() {
     private lateinit var connection : Connection
 
