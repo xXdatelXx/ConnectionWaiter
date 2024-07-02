@@ -14,6 +14,7 @@ class Connection(
 ) {
     private val executeService = Executors.newSingleThreadExecutor()
 
+    // (Connection download speed + upload speed) / 2
     private val speed: Int
         get() {
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -25,6 +26,7 @@ class Connection(
             return (downSpeed + upSpeed) / 2
         }
 
+    // Wait until a connection speed will be > minimalSpeed
     fun connect() {
         if (minimalSpeed <= 0) throw Exception("$minimalSpeed must be greater than 0")
         if (connectionRetryInterval.inWholeMilliseconds <= 0) throw Exception("$connectionRetryInterval must be greater than 0")
@@ -35,7 +37,5 @@ class Connection(
 
             view.connect(speed)
         }
-        //executeService.execute {
-        //}
     }
 }
