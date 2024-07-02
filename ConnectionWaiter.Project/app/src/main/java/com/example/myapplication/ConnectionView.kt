@@ -6,7 +6,7 @@ import android.os.VibrationEffect
 import android.os.VibrationEffect.createOneShot
 import android.os.Vibrator
 import android.widget.Toast
-
+//TODO: cache to fields
 class ConnectionView(private val context: Context) {
     fun connect(speed: Int) {
         showToast(speed)
